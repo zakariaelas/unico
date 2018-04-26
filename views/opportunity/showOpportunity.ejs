@@ -23,7 +23,7 @@
                             <div>
                                 <span id="flname"><a href="/profile/<%= opportunity.author.username %>"><%= opportunity.author.username %></a></span>
                                 <span id="fors"><%= opportunity.author.fors %></span>
-                                <span id="date"><%= moment(opportunity.created).local() %></span>
+                                <span id="date"><%= moment(opportunity.created).local().startOf('day') %></span>
                             </div>
                         </div>
                         <hr>

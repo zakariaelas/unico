@@ -23,7 +23,7 @@
                             <div>
                                 <span id="flname"><a href="/profile/<%= blog.author.username %>"><%= blog.author.username %></a></span>
                                 <span id="fors"><%= blog.author.fors %></span>
-                                <span id="date"><%= moment(blog.created).local() %></span>
+                                <span id="date"><%= moment(blog.created).local().startOf('day') %></span>
                             </div>
                         </div>
                         <hr>
