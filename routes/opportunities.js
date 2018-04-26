@@ -68,7 +68,17 @@ router.get('/:id/edit',middleware.isLoggedIn,middleware.ensureCorrectOpportunity
 });
 
 router.put('/:id',middleware.isLoggedIn,middleware.ensureCorrectOpportunity,function(req,res){
-    db.Opportunity.findByIdAndUpdate(req.params.id,req.body,function(err,opportunity){
+    db.Opportunity.findByIdAndUpdate(req.params.id,{
+        author:{
+            id: req.user._id,
+            username: req.user.username,
+            fors: req.user.fors
+        },
+        title: req.body.title,
+        oppType : req.body.oppType.toLowerCase(),
+        description: req.body.description,
+        location : req.body.location,
+        requirement: req.body.requirement},function(err,opportunity){
         if(err || !opportunity){
             req.flash('error',"Opportunity cannot be edited, try again later!");
             return res.redirect('/opportunities/'+req.params.id);
@@ -94,8 +104,8 @@ router.delete('/:id',middleware.isLoggedIn,middleware.ensureCorrectOpportunity,f
 
 //Get by category
 
-router.get('/type/:type',function(req,res){
-    db.Opportunity.find({oppType: req.params.type},function(err,opportunities){
+router.get('/type/:oppType',function(req,res){
+    db.Opportunity.find({oppType: req.params.oppType}).sort({votes:'desc'}).exec(function(err,opportunities){
         if(err || opportunities.length < 0){
             req.flash('error','Cannot get opportunities of specified category');
             return res.redirect('/opportunities');
