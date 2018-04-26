@@ -46,7 +46,7 @@ router.put('/:idO/comment/:idC',middleware.isLoggedIn,middleware.ensureCorrectUs
             req.flash('error','Comment could not be updated, please try again later!');
             return res.redirect('/opportunities/'+req.params.id0);
         }
-        req.flash('success','Comment created successfuly !');
+        req.flash('success','Comment updated successfuly !');
         res.redirect('/opportunities/'+req.params.idO);
     });
 });
