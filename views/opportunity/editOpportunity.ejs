@@ -19,7 +19,7 @@
                 <form action="/opportunities/<%= opportunity._id %>?_method=PUT" method="POST">
                     <input id="title" type="text" name="title" value="<%= opportunity.title %>" placeholder="Title" required>
                     <textarea name="description" placeholder="Description" required><%= opportunity.description %></textarea>
-                    <input id="location" name="location" placeholder="Location"  required >
+                    <input id="location" name="location" placeholder="Location" value="<%= opportunity.location %>" required >
                     <select name="Requirement" required>
                         <option disabled selected value required> -- Requirement -- </option>
                         <option>Baccalaureat</option>
