@@ -1,0 +1,375 @@
+*{
+    margin:0;
+    padding:0;
+    font-size:20px;
+    font-weight:400;
+    font-family:'Lato','Arial',sans-serif;
+    box-sizing: border-box;
+    color:rgba(0,0,0,.84);
+}
+
+body,html{
+    height:100%;
+    background-color: #fafafa;
+}
+
+.container{
+    margin:0 auto;
+    margin-bottom:70px;
+    width:1140px;
+
+}
+
+main{
+    margin-top:10%;
+}
+
+article{
+    height:100%;
+    background-color:white;
+}
+
+.blog-container, .comment-container{
+    width:740px;
+    margin:0 auto;
+    padding:30px 20px;   
+}
+
+.blog-header{
+    margin-bottom:10%;
+}
+
+.blog-author-data{
+    display:flex;
+    margin-bottom:10%;
+}
+
+.blog-author-img{
+    background-size:cover;
+    background-image: url("/static/img/avatar.png");
+    margin-right:2%;
+    height:90px;
+    width:90px;
+}
+
+.blog-header span{
+    display:block;
+    font-size:90%;
+    padding:4px;
+    line-height:120%;
+}
+
+.blog-header #flname a:link,
+.blog-header #flname a:visited{
+    font-size:110%;
+    text-decoration:none;
+    
+}
+
+.blog-header #flname a:hover{
+    cursor:pointer;
+    color:#3391ff;
+}
+
+.blog-header #fors{
+    color:#f6d45a;
+}
+
+.blog-header #date{
+    color:rgba(0,0,0,.54);
+}
+
+hr{
+    margin-top:0;
+    width:70%;
+    margin:5% auto;;
+    border:2px solid #3391ff;
+    background-color:#3391ff;
+}
+
+.blog-title{
+    padding:30px 0;
+}
+
+.blog-title h1{
+    font-size:220%;
+    font-weight:bold;
+}
+
+.blog-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/*
+.blog-img {
+    height: 80px;
+    width: 30px;
+}*/
+
+.blog-text{
+    text-align: justify;
+    word-wrap: break-word;
+    line-height:170%;
+    font-size:110%;
+    padding:15px 0;
+}
+
+.blog-footer{
+    margin-top:5%;
+    
+}
+
+.blog-category-votes #category:link,
+.blog-category-votes #category:visited{
+    display:inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding:10px;
+    border:1px solid #3391ff;
+    color:black;
+    transition: all 0.3s ease-in-out;
+}
+
+.blog-category-votes #category:hover,
+.blog-category-votes #category:active{
+    display:inline-block;
+    padding:10px;
+    border:1px solid #3391ff;
+    background-color:#3391ff;
+    color:white;
+}
+
+.blog-category-votes #votes{
+    float:right;
+    padding:10px;
+}
+
+.ion-chevron-up{
+    text-decoration: none;
+    color:black;
+    font-size:130%;
+    padding:10px 16px;
+    border-radius:50%;
+    border:1px solid #3391ff;
+    margin-right:5px;
+    background-color:white;
+    transition: 0.2s ease-in;
+}
+
+.ion-chevron-up:hover,
+.ion-chevron-up:active{
+    background-color:#3391ff;
+    color:white;
+}
+
+#splitor{
+    height:1px;
+    box-shadow: 1px 2px 5px #555;
+    border:1px solid #3391ff;
+    background-color:#3391ff;
+}
+
+.comment-form{
+    padding:25px 0;
+    
+}
+
+.comment-form textarea{
+    resize:none;
+    height:150px;
+    border-radius:5px;
+    border: 1px solid rgba(0,0,0,.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,.03);
+    width:100%;
+    outline:none;
+    line-height:140%;
+    padding:20px 30px;
+    font-size:80%;
+}
+
+.comment-form h3{
+    padding:15px 0
+}
+
+.comments-list{
+    line-height:160%;
+    font-size:80%;
+}
+
+.comment-item{
+    background-color:#fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    border: 1px solid rgba(0,0,0,.09);
+    border-radius:3px;
+    padding:15px 30px;
+    padding-bottom:20px;
+    margin-bottom:5%;
+}
+
+.comment-header{
+    padding:15px 0;
+}
+
+.comment-header a:link,
+.comment-header a:visited{
+    text-decoration: none;
+    color:#3361ff;
+    transition: 0.3s ease-out;
+}
+
+.comment-header a:hover,
+.comment-header a:active{
+    color:#103bd0;
+    
+}
+
+.comment-header span{
+    display:block;
+    font-size:75%;
+    color:rgba(0,0,0,.54);
+}
+
+.comment-text{
+    line-height:150%;
+}
+
+.edit-remove{
+    padding:40px 0;
+}
+
+.edit-remove a:link,
+.edit-remove a:visited{
+    text-decoration: none;
+    margin-right:2%;
+    padding:10px 15px;;
+    border-radius:200px;
+    transition: 0.3s ease-in-out;
+}
+
+.edit-remove form,.edit-remove a{
+    display:inline-block;
+}
+
+.edit-remove #remove{
+    background-color:white;
+    color: #f93220;
+    border:1px solid #f93220;
+    padding:10px 15px;;
+    border-radius:200px;
+    transition: 0.3s ease-in-out;
+
+}
+
+.edit-remove #edit{
+    color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+    transition: 0.3s ease-in-out;
+}
+
+.edit-remove #edit:hover{
+    background-color: #f0ad4e;
+    color:white;
+}
+
+.edit-remove form{
+    margin-right:2%;
+}
+
+.edit-remove #remove:hover{
+    color:white;
+    background-color: #f93220;
+}
+
+#theform{
+    float:right;
+}
+
+.row{
+    margin:0 auto;
+    width:1140px;
+    height:80px;
+}
+
+nav{
+    background-color:#3391ff;
+    box-shadow: 2px 2px 13px;
+}
+
+.main-nav{
+    margin-top:20px;
+}
+
+.logo{
+    height:90px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom:2px solid #fff;
+}
+
+.btn-submit{
+    border:1px solid #3391ff;
+    background-color:#fafafa;
+    padding:10px 15px;
+    margin-top:2%;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-submit:hover{
+    border:1px solid #fafafa;
+    background-color:#3391ff;
+    color:white;
+    
+}
+
+.comment-edit-remove a:link,
+.comment-edit-remove a:visited{
+    text-decoration:none;
+}
+
+.comment-edit-remove{
+    padding:10px 0;
+    margin:1% 0;
+}
+
+/* .comment-edit-remove .floated{
+} */
+
+.comment-edit-remove #edit,
+.comment-edit-remove #remove{
+    border-radius:200px;
+    padding:5px 10px;
+    font-size:80%;
+    background-color:white;
+    transition:0.3s ease-out;
+}
+
+.comment-edit-remove #edit{
+    display:inline-block;
+    margin-right:1%;
+    color: #f0ad4e;
+    border:1px solid #f0ad4e;
+}
+
+.comment-edit-remove #edit:hover{
+    color:white;
+    background-color: #f0ad4e;
+}
+
+.comment-edit-remove #remove{
+    color: #f93220;
+    border:1px solid #f93220;
+}
+
+.comment-edit-remove #remove:hover{
+    color:white;
+    background-color: #f93220;
+}
+
+.comment-edit-remove form{
+    display:inline-block;
+    margin-right:1%;
+}

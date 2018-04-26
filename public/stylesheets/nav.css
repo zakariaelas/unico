@@ -1,0 +1,92 @@
+.logo{
+    height:110px;
+    width:auto;
+    float:left;
+    margin-top:0px;
+}
+
+.main-nav{
+    float:right;
+    margin-top:40px;
+}
+
+.main-nav li{
+    display:inline-block;
+    margin-left:40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    font-weight:300;
+    font-size:90%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition : border-bottom 0.2s;
+    
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom:2px solid #3391ff;
+}
+
+.dropbtn {
+    color: white;
+    font-weight:300;
+    letter-spacing: 1px;
+    font-size:90%;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius:50%;
+    border:1px solid white;
+    cursor:pointer;
+    background-color:transparent;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor:pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,0);
+    background-color: rgba(51, 145, 255, 0.87);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: display 2s ease-in-out;
+}
+
+.dropdown-content .dropdown-link:link,
+.dropdown-content .dropdown-link:visited{
+    font-size:90%;
+    font-weight:300;
+    color:white;
+    text-transform: uppercase;
+    padding:15px 20px;    
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease-in-out;
+}
+
+.dropdown-content .dropdown-link:hover {
+    background-color: white;
+    color:#3391ff;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.user-dropdown:hover .dropbtn {
+    background-color: white;
+    color:#3391ff;
+}

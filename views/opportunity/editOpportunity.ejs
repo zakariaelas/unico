@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit - Opportunity</title>
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/newOpportunity.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+        	<% include ../nav.ejs %>
+        </header>
+        <div class="headers">
+            <h1>Edit Opportunity</h1>
+            <h3>Edit an existing opportunity here</h3>
+        </div>
+        <div class="container">
+            <div class="form-group">
+                <form action="/opportunities/<%= opportunity._id %>?_method=PUT" method="POST">
+                    <input id="title" type="text" name="title" value="<%= opportunity.title %>" placeholder="Title" required>
+                    <textarea name="description" placeholder="Description" required><%= opportunity.description %></textarea>
+                    <input id="location" name="location" placeholder="Location"  required >
+                    <select name="Requirement" required>
+                        <option disabled selected value required> -- Requirement -- </option>
+                        <option>Baccalaureat</option>
+                        <option>Bachelor</option>
+                        <option>Master</option>
+                        <option>Phd</option>
+                        <option>Post-Phd</option>
+                    </select>
+                    <div class='radio'>
+	                    <label for="internship"> Internship </label>
+						<input type="radio" name="oppType" id="internship" value="Internship" checked>
+						<label for="research"> Research</label>
+						<input type="radio" name="oppType" id="research" value="Research">
+						<label for="job"> Job</label>
+						<input type="radio" name="oppType" id="job" value="Job">
+					</div>
+                    <button type="submit" class="submitbutton">Edit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

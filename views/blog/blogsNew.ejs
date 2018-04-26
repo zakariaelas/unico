@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unico - New Blog</title>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/newBlog.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class="headers">
+            <h1>New Blog</h1>
+            <h3>Create a new blog here</h3>
+        </div>
+        <div class="container">
+            <div class="form-group">
+                <form action="/blogs" method="POST">
+                    <input id="title" type="text" name="title" placeholder="Title" required>
+                    <textarea name="text" placeholder="Blog Post" pattern=.{190,} title="190 characters minimum" required ></textarea>
+                    <input type="text" name="image" placeholder="Image Link">
+                    <select id="category" name="category" required>
+                        <option disabled selected value required> -- Category -- </option>
+                        <option>Engineering</option>
+                        <option>Mechanics</option>
+                        <option>Chemistry</option>
+                        <option>Programming</option>
+                        <option>Electronics</option>
+                        <option>Economy</option>
+                        <option>Finance</option>
+                    </select>
+                    <button type="button" class="submitbutton">Create</button>
+                </form>
+            </div>
+        </div>
+        <script src="/static/js/showBlogs.js"></script>
+    </body>
+</html>

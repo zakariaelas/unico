@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Unico</title>
+    </head>
+    <body>
+        <h1>Comment Edit</h1>
+        <form action="/blogs/<%= blogId %>/comment/<%= comment._id %>?_method=PUT" method="POST">
+            <textarea name="text"><%= comment.text %></textarea>
+            <input type="submit">
+        </form>
+    </body>
+</html>

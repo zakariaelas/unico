@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unico - Blogs</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/showBlogs.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/flash.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+            <div class="row">
+                <div class="text-box">
+                    <h1>Blogs</h1>
+                    <h4><a href="/blogs/new">Create New Blog</a></h4>
+                </div>
+            </div>
+        </header>
+        <div class='band-category'>
+            <div class='row'>
+                <a href="/blogs/category/programming" class="cat">Programming</a>
+                <a href="/blogs/category/engineering" class="cat">Engineering</a>
+                <a href="/blogs/category/mechanics" class="cat">Mechanics</a>
+                <a href="/blogs/category/economy" class="cat">Economy</a>
+                <a href="/blogs/category/finance" class="cat">Finance</a>
+                <a href="/blogs/category/electronics" class="cat">Electronics</a>
+                <a href="/blogs/category/chemistry" class="cat">Chemistry</a>
+                <a href="/blogs/" class="cat">See All</a>
+            </div>
+        </div>
+        <div class="blogs-list">
+            <% include ../flash.ejs %>
+            <% blogs.forEach((blog) => { %>
+                <div class="container">
+                        <div class="blog-item">
+                            <div class="blog-image">
+                                <a href="/blogs/category/<%= blog.category %>"><%= blog.category %></a>
+                                 <% if (blog.image.length){ %>
+                                    <img src="<%= blog.image %>">
+                                 <% }else{ %>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/450px-No_image_available.svg.png">
+                                 <% } %>
+                            </div>
+                            <div class="blog-data">
+                                <div class="blog-header">
+                                    <h3><a href='/blogs/<%= blog._id %>'><%= blog.title %></a>
+                                    <% if(blog.author.fors === "Student"){ %>
+                                        <span id="fors" style="background-color:#3accf1;border-color:#3accf1"><%= blog.author.fors %></span></h3>
+                                    <% }else{ %>
+                                        <span id="fors" style="background-color:#f6d45a;border-color:#f6d45a"><%= blog.author.fors %></span></h3>
+                                    <% } %>
+                                    <div class="author-date-number">
+                                        <span class='author'><i class="ion ion-person"></i> <%=blog.author.username %></span>
+                                        <span class="date"><i class="ion ion-ios-clock-outline"></i> <%= moment(blog.created).local().fromNow() %></span>
+                                        <span class="commentsNum"><i class="ion-thumbsup"></i> <%= blog.votes %></span>
+                                    </div>
+                                </div>
+                                <div class="blog-snippet">
+                                    <p><%= blog.text.slice(0,300) %>...</p>
+                                </div>
+                                <a href='/blogs/<%= blog._id %>' class='btn-link'>Read More</a>
+                            </div>
+                        </div>
+                </div>
+            <% }) %>
+            <div class="container">
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <a href="#">Programming</a>
+                        <img src="https://d2dybsqaihwlah.cloudfront.net/wp-content/uploads/2017/05/10161109/nodejs-logo.png">
+                    </div>
+                    <div class="blog-data">
+                        <div class="blog-header">
+                            <h3><a href='#'>A deep look at the require function in Node JS</a><span id="fors">Faculty</span></h3>
+                            <div class="author-date-number">
+                                <span class='author'><i class="ion ion-person"></i> Author</span>
+                                <span class="date"><i class="ion ion-ios-clock-outline"></i> April 6, 2018</span>
+                                <span class="commentsNum"><i class="ion ion-chatbubble"></i> 6</span>
+                            </div>
+                        </div>
+                        <div class="blog-snippet">
+                            <p>A step-by-step guide with solved problems. I'm teaching visually with lots of examples. Created by Andrei Margeloiu Last updated 7/2017 English English What Will I Learn? Deeply understand basic ...</p>
+                        </div>
+                        <a href='#' class='btn-link'>Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <a href="#">Engineering</a>
+                        <img src="https://images.unsplash.com/photo-1457364847821-58861bbda116?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df2af73112bdf03dc135a05a17fc8c08&auto=format&fit=crop&w=1050&q=80">
+                    </div>
+                    <div class="blog-data">
+                        <div class="blog-header">
+                            <h3><a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing eli</a></h3>
+                            <div class="author-date-number">
+                                <span class='author'><i class="ion ion-person"></i> Author</span>
+                                <span class="date"><i class="ion ion-ios-clock-outline"></i> April 3, 2018</span>
+                                <span class="commentsNum"><i class="ion ion-chatbubble"></i> 0</span>
+                            </div>
+                        </div>
+                        <div class="blog-snippet">
+                            <p>A step-by-step guide with solved problems. I'm teaching visually with lots of examples. Created by Andrei Margeloiu Last updated 7/2017 English English What Will I Learn? Deeply understand basic examples. Created by Andrei Margeloiu Last updated 7/2017 English English What Will I Learn? Deeply understand basic ...</p>
+                        </div>
+                        <a href='#' class='btn-link'>Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var div = Array.from(document.getElementsByClassName("blog-snippet"));
+        console.log(div);
+        div.forEach(function(snippetDiv){
+            var cleanText = snippetDiv.innerText.replace(/<\/?[^>]+(>|$)/g, "");
+            snippetDiv.innerText = cleanText;
+            console.log(cleanText);
+        });
+    </script>
+</html>

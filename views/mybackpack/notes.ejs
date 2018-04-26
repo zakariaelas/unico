@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/notes.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class="notes-header">
+            <h1>My Notes</h1>
+        </div>
+        <div class="notes-container">
+            <div class="notes-app">
+                <div class="notes-subjects">
+                    <div class="notes-toolbar">
+                        <div><span>Add new subject</span><i class="ion-plus"></i></div>
+                        <input id="input-subject" type="text" placeholder="Subject">
+                    </div>
+                    <div class="notes-sub">
+                        <ul class='sub-list'>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="notes-text">
+                    <textarea></textarea>
+                    <button class="saveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+        <script src="/static/js/notes.js"></script>
+    </body>
+</html>

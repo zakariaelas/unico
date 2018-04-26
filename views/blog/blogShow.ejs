@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/nav.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/showBlog.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/flash.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+            <% include ../flash.ejs %>
+        </header>
+        <main>
+            <article>
+                <div class="blog-container">
+                    <header class="blog-header">
+                        <div class="blog-author-data">
+                            <div class="blog-author-img">
+                            </div>
+                            <div>
+                                <span id="flname"><a href="/profile/<%= blog.author.username %>"><%= blog.author.username %></a></span>
+                                <span id="fors"><%= blog.author.fors %></span>
+                                <span id="date"><%= moment(blog.created).local() %></span>
+                            </div>
+                        </div>
+                        <hr>
+                    </header>
+                    <div class="blog-content">
+                        <div class="blog-title">
+                            <h1><%= blog.title %></h1>
+                        </div>
+                        <div class="blog-img">
+                            <img src="<%= blog.image %>">
+                        </div>
+                        <div class="blog-text">
+                            <p><%= blog.text %></p>
+                        </div>
+                        <hr id="splitor">
+                        <div class='blog-footer'>
+                            <div class="blog-category-votes">
+                                <a href="/blogs/category/<%= blog.category %>" id="category"><%= blog.category %></a>
+                                <form id="theform" action="/blogs/<%= blog._id %>/upvote?_method=PUT" method="POST">
+                                    <span id="votes"><button type="submit" class="ion-chevron-up"></button><%= blog.votes %></span>
+                                </form>
+                            </div>
+                        </div>
+                        <% if(user && blog.author.id.equals(user._id)){ %>
+                            <div class="edit-remove">
+                                <a href="/blogs/<%= blog._id %>/edit" id="edit">Edit Blog</a>
+                                <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                                    <button id="remove">Remove Blog</button>
+                                </form>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </article>
+            <div class="comment-container">
+                <div class="comment-form">
+                    <h3>Comments</h3>
+                    <form action="/blogs/<%= blog._id %>/comment" method="POST">
+                        <textarea id="textareaComment" name="text" placeholder="Your comment" required></textarea>
+                        <button class="btn-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="comments-list">
+                    <% blog.comments.forEach((comment) => { %>
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <span><a href="/profile/<%= comment.author.username %>"><%= comment.author.username %></a></span>
+                                <span><%= moment(comment.created).local().fromNow() %></span>
+                            </div>
+                            <div class="comment-text">
+                                <p><%= comment.text %></p>
+                            </div>
+                            <% if(user && comment.author.id.equals(user._id)){ %>
+                                <div class="comment-edit-remove">
+                                    <div class="floated">
+                                    <a href="/blogs/<%= blog._id %>/comment/<%= comment._id %>/edit" id="edit">Edit</a>
+                                    <form action="/blogs/<%= blog._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <button id="remove">Delete</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% }) %>
+                    
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span><a href="#">badr_ben</a></span>
+                            <span>April 6th</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>If a company is afraid to let developers work from home, there is only one       strategy: leave. Trust is requirement #1 for this job.
+
+                                But before you start with using working from home and flexible hours (which should both be normal for this type of work, because, trust) as a workaround, start at the beginning: if the workspace doesn’t facilitate various modes of working simultaneously, it’s not a proper workspace for a development team.
+
+                                A proper workspace for a dev team should facilitate solo work without distractions, one-on-one collaboration, group collaboration, collaboration with stakeholders, space to get out of your head and do something else, etcetera. Note: simultaneously : so yeah, that’s at least 3x the physical space 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span><a href="#">badr_ben</a></span>
+                            <span>April 6th</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>Very good read indeed, enjoyed every part of it ! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

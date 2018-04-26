@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unico - New Blog</title>
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link  rel="stylesheet" type="text/css" href="/static/stylesheets/newBlog.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <style>
+            .container{
+                margin-top:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class="headers">
+            <h1>Edit Comment</h1>
+            <h3>Edit your comment here</h3>
+        </div>
+        <div class="container">
+            <div class="form-group">
+                <form action="/blogs/<%= blogId %>/comment/<%=comment._id %>?_method=PUT" method="POST">
+                    <textarea name="text" placeholder="Comment" pattern=.{190,} title="190 characters minimum" required ><%= comment.text %></textarea>
+                    <button type="submit" class="submitbutton">Edit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

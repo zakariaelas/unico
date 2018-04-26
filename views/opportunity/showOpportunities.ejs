@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unico - Opportunities</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/nav.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/showOpportunities.css">
+        <link type="text/css" rel="stylesheet" href="/static/stylesheets/flash.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+            <div class="row">
+                <div class="text-box">
+                    <h1>Opportunities</h1>
+                    <h4><a href="/opportunities/new">Create New Opportunity</a></h4>
+                </div>
+            </div>
+        </header>
+        <div class='band-category'>
+            <div class='band-container'>
+                <a href="/opportunities/type/internship" class="cat">Internship</a>
+                <a href="/opportunities/type/job" class="cat">Job</a>
+                <a href="/opportunities/type/research" class="cat">Research</a>
+                <a href="/opportunities/" class="cat">See All</a>
+            </div>
+        </div>
+        <% include ../flash.ejs %>
+        <div class="container">
+            <div class="opportunity-container">
+               
+                    <% for(var i=0 ; i < opportunities.length ; i++){ %>
+                        <div class="roww">
+                        <% console.log(opportunities.length) %>
+                        <% for(var j=0; j<3 && i < opportunities.length ; j++,i++){ %>
+                                <% console.log(opportunities[j]) %>
+                                <% console.log(i) %>
+                                <div class="col span-1-of-3 box">
+                                        <div class="opportunity-data">
+                                            <div class="opportunity-header">
+                                                <h3><a href='/opportunities/<%= opportunities[i]._id %>'><%= opportunities[i].title %></a></h3>
+                                                <div class="author-date-number">
+                                                    <span class='author'><i class="ion ion-person"></i> <%= opportunities[i].author.username %></span>
+                                                    <span class="date"><i class="ion ion-ios-clock-outline"></i> <%= moment(opportunities[i].created).local().fromNow() %></span>
+                                                    <span class="commentsNum"><i class="ion-thumbsup"></i> <%= opportunities[i].votes %></span>
+                                                </div>
+                                            </div>
+                                            <div class="opportunity-info">
+                                                <span id="location"><%= opportunities[i].location %></span>
+                                                <span id="type"><%= opportunities[i].oppType %></span>
+                                            </div>
+                                            <div class='button-div'>
+                                                <a href='/opportunities/<%= opportunities[i]._id %>' class='btn-link'>Read More</a>
+                                            </div>
+                                        </div>
+                                </div>
+                            <% } %> 
+                        </div>
+                        <% i-- %>
+                        <% console.log("outside i :"+i)%>
+                    <% } %>
+            </div>
+        </div>
+    </body>
+</html>

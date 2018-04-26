@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+// mongoose.set('debug',true);
+// mongoose.connect('mongodb://localhost/unico');
+mongoose.connect('mongodb://unico:unicobadrzak@ds159459.mlab.com:59459/unico');
+module.exports.User = require('./user');
+module.exports.Blog = require('./blogs');
+module.exports.Comment = require('./comment');
+module.exports.Opportunity = require('./opportunities');
+module.exports.Videoconferene = require('./videoconference');
+module.exports.Todo = require('./todo');
+module.exports.Note = require('./note');

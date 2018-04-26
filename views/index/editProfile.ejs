@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modify Profile</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/editProfile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class='container'>
+            <form action="/profile?_method=PUT" method="POST">
+                <div class="profile-container">
+                    <div class="image-uname">
+                        <img src="/static/img/avatar.png">
+                        <h3 id="name"><%= user.firstName %> <%= user.lastName %></h3>
+                        <div id="fors"><%= user.fors %></div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="first-last-name">
+                            <h4>Basics:</h4>
+                                <input class="normal-input" type="text" name="firstName" placeholder="First Name" value="<%= user.firstName %>" required>
+                                <input class="normal-input" type="text" name="lastName" placeholder="Last Name" value="<%= user.lastName %>" required>
+                                <div class="radio">
+                                    <label for="student"> Student</label>
+                                    <input type="radio" name="fors" id="student" value="Student" checked>
+                                    <label for="faculty"> Faculty</label>
+                                    <input type="radio" name="fors" id="faculty" value="Faculty">
+                                </div>
+                        </div>
+                        <hr>
+                        <div class="profile-bio">
+                            <h3>Biography:</h3>
+                            <textarea name="bio" placeholder="Your biography"><%= user.bio %></textarea>
+                        </div>
+                        <hr>
+                        <div class="academic-background">
+                                <h3>Academic Information: </h3>
+                                <input class="normal-input" type="text" name="university" placeholder="University" value="<%= user.university %>" required>
+                                <input class="normal-input" type="text" name="degree" placeholder="Degree(s)" value="<%= user.degree %>" required>
+                                <input class="normal-input" type="text" name="location" placeholder="Location" value="<%= user.location %>" required>
+                        </div>
+                        <hr>
+                        <div class="contact-info">
+                            <h3>Contact Information:</h3>
+                                <div class="input-grp">
+                                    <span class="addon">http://www.facebook.com/</span>
+                                    <input class="social-input" placeholder="Facebook Profile" type="text" name="fblink" value="<%= user.fblink %>">
+                                </div>
+                                <div class="input-grp">
+                                    <span class="addon">http://www.linkedin.com/</span>
+                                    <input class="social-input" placeholder="LinkedIn Profile" type="text" name="linkedlink" value="<%= user.linkedlink %>">
+                                </div>
+                                <div class="input-grp">
+                                    <span class="addon">https://plus.google.com/</span>
+                                    <input class="social-input" placeholder="Google+ Link" type="text" name="googlelink" value="<%= user.googlelink %>">
+                                </div>
+                        </div>
+                        <button type="submit">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

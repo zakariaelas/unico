@@ -1,0 +1,265 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size:20px;
+    font-family: 'Lato','Arial',sans-serif;
+    font-weight:400;
+    color:#555;
+}
+
+html{
+    background-color:#f7f7f7;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+.container{
+    margin:0 auto;
+    margin-bottom:70px;
+    width:1140px;
+
+}
+
+.opportunity-container{
+    margin-top:3%;
+}
+
+.row{
+    margin:0 auto;
+    width:1140px;
+    height:250px;
+}
+
+.roww{
+    margin:0 auto;
+    width:1140px;
+    display:flex;
+}
+
+/* =============== HEADERS AND CREATE NEW BUTTON ============= */
+
+header{
+    position:relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6492053f1a3187e3596132f5857917b4&auto=format&fit=crop&w=1050&q=80");
+    background-size:cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-height: 100%;
+    max-width:100%;
+}
+
+.text-box{
+    text-align: center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+h1,h4 > a{
+    text-transform: uppercase;
+    margin-bottom:15%;
+    color:white;
+    padding:5px 0;
+}
+
+h4 > a{
+    font-size:90%;
+    text-decoration: none;
+    border:1px solid white;
+    background-color:white;
+    color:#43b35f;
+    border-radius:200px;
+    padding:10px 15px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+h4 > a:hover{
+    background-color: #43b35f;
+    color: white;
+    border: 1px solid #43b35f;
+}
+
+h1{
+    font-size: 250%;
+    border-bottom: 2px solid #43b35f;
+}
+
+/* ===================== */
+
+
+.band-category{
+    height:35px;
+    background-color:#f7f7f7;
+}
+
+.opportunity-data{
+    border:1px solid black;
+    padding:15px;
+    box-shadow: 2px 3px 14px #b2acac;
+    min-height:280px;
+    
+}
+
+.opportunity-header{
+    padding:15px;
+}
+
+.opportunity-header h3 span{
+    overflow-wrap: break-word;
+}
+
+.opportunity-header h3 > a:link,
+.opportunity-header h3 > a:visited{
+/*
+    text-transform: uppercase;
+    font-weight:300;
+*/
+    text-transform:capitalize;
+    font-size:170%;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.opportunity-header h3 > a:hover,
+.opportunity-header h3 > a:active{
+    color: #43b35f;
+}
+
+.author-date-number span{
+    font-size: 80%;
+    font-weight:300;
+}
+
+.opportunity-info{
+    padding-left:15px;
+    margin-bottom:5%;
+}
+
+.opportunity-info span{
+    font-size: 90%;
+}
+
+.btn-link:link,
+.btn-link:visited{
+    text-decoration: none;
+    border: 1px solid #43b35f;
+    background-color: #43b35f;
+    color:white;
+    font-weight: 300;
+    border-radius: 100px;
+    padding:5px 15px;
+    transition: border 0.4s, background-color 0.4s;
+}
+
+.btn-link:hover,
+.btn-link:active{
+    border: 1px solid #399b51;
+    background-color: #399b51;
+}
+
+.button-div{
+    margin-left:15px;
+    margin-bottom:5%;
+}
+
+.cat:link,
+.cat:visited{
+    text-decoration: none;
+    display:inline-block;
+    padding:8px 30px;
+    color:#43b35f;
+    font-weight: 400;
+    font-size:80%;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease-in-out,color 0.4s ease-in-out; 
+}
+
+.cat:hover,
+.cat:active,
+.active:visited,
+.active:link{
+    background-color:#43b35f;
+    color:white;
+}
+
+
+
+@keyframes opacityAnim{
+    0%{
+        transform:translateX(-100%);
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.band-category{
+    animation: 1s ease-out 0s 1 opacityAnim;
+}
+
+@keyframes textAnimation{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+.text-box{
+    animation:1s ease-in-out 0s 1 textAnimation;
+}
+
+.band-container{
+    display:flex;
+    width:1140px;
+    margin:0 auto;
+    justify-content: space-between;
+}
+
+.dropdown-content {
+    background-color: rgba(67, 179, 95,0.87);
+}
+
+.user-dropdown:hover .dropbtn {
+    color:#43b35f;
+}
+
+.dropdown-content .dropdown-link:hover {
+    color:#43b35f;
+}
+
+.main-nav li a:hover, .main-nav li a:active{
+    border-color: #43b35f;
+}
+
+@keyframes opacityAnim{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+.container{
+    animation: 1.3s ease-in-out 0s 1 opacityAnim;  
+}
+
+#type,#location{
+    display:block;
+    padding: 5px;
+}
+
+
+#type, #location{
+    text-transform: capitalize;
+}

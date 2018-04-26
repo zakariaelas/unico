@@ -1,0 +1,21 @@
+<nav>
+    <div class="row">
+        <a href="/"><img src="/static/img/logo.png" class="logo"></a>
+        <ul class="main-nav">
+            <li><a href="/blogs">Blogs</a></li>
+            <li><a href="/opportunities">Opportunities</a></li>
+            <li><a href="/mybackpack">My Backpack</a></li>
+            <% if(user){ %>
+            <li>
+                <div class="user-dropdown">
+                    <button class="dropbtn"><%= user.firstName.slice(0,1) + user.lastName.slice(0,1) %></button>
+                    <div class="dropdown-content">
+                    <a class="dropdown-link" href="/profile">Profile</a>
+                    <a class="dropdown-link" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

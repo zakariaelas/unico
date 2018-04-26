@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UniCo</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/032grid.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/landing.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/flash.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+            <% include ../flash.ejs %>
+            <div class="unico-text-box">
+                <div class="row">
+					<h1>UniCo<br>An Educational Networking Tool</h1>
+					<% if(!user){ %>
+						<a href="/register" class="btn btn-full">Register</a>
+                		<a href="/login" class="btn btn-ghost">Login</a>
+					<% }else{ %>
+						<a href="/blogs" class="btn btn-full">Get Started !</a>
+					<% } %>
+                </div>
+            </div>
+        </header>    
+        <section class="section-features">
+            <div class="row">
+                <h2>An Intercollegiate community</h2>
+                <p class="long-copy">Welcome to our website. We are uniCo and our mission is to promote intercollegiate communication between both faculty and students from different majors all around the world.</p>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-paper icon-big"></i>
+                    <h3>Blogs</h3>
+                    <p>Share your thoughts on a specific subject through blogs, and get your work reviewed from faculty and student members from all around the world. Leave your feedback on other members' work too through the 'Blogs' feature of uniCo!</p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-box icon-big"></i>
+                    <h3>Opportunities</h3>
+                    <p>Looking for an internship, job, or even research opportunity? We got your back! The 'Opportunities' feature will allow you to find the opportunity you are looking for!</p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-bag icon-big"></i>
+                    <h3>My Backpack</h3>
+                    <p>The exclusive 'My Backpack' feature allows registered members to access a workspace provided by uniCo, you can organize your daily life tasks into a to-do list. A note taker will also be provided to help our members take notes in an elegant, easy, and very fast way! All you need is an account!</p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-videocam icon-big"></i>
+                    <h3>Live Topics</h3>
+                    <p>Ever wished to take part in a discussion about a topic you are passionate about with other people from all around the world? Unico will provide you with an exclusive feature, using the infamous Google Hangouts API to watch or even participate in live conferences about specific topics!</p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

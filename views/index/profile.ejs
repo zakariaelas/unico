@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class='container'>
+            <div class="profile-container">
+                <div class="image-uname">
+                    <img src="/static/img/avatar.png">
+                    <h3 id="name"><%= userProfile.firstName %> <%= userProfile.lastName %></h3>
+                    <div id="fors"><%= userProfile.fors %></div>
+                    <div class="contact-info">
+                        <% if(userProfile.fblink){ %>
+                            <a target="_blank" href="https://www.facebook.com/<%= userProfile.fblink %>" class="fa fa-facebook"></a>
+                        <% }if(userProfile.linkedlink){ %>
+                            <a target="_blank" href="https://www.linkedin.com/<%= userProfile.linkedlink %>" class="fa fa-linkedin"></a>
+                        <% }if(userProfile.googlelink){ %>
+                            <a target="_blank" href="https://www.plus.google.com/<%= userProfile.googlelink %>" class="fa fa-google"></a>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <div class="first-last-name">
+                        <h4>First Name:</h4>
+                        <span><%= userProfile.firstName %></span>
+                        <h4>Last Name:</h4>
+                        <span><%= userProfile.lastName %></span>
+                    </div>
+                    <hr>
+                    <div class="profile-bio">
+                        <h3>Bio:</h3>
+                        <p><%= userProfile.bio %></p>
+                    </div>
+                    <hr>
+                    <div class="academic-background">
+                        <h3>Academic Background:</h3>
+                        <h4>University:</h4>
+                        <span><%= userProfile.university %></span>
+                        <h4>Degree(s):</h4>
+                        <span><%= userProfile.degree %></span>
+                        <h4>Location:</h4>
+                        <span><%= userProfile.location %></span>
+                        <% if(userProfile.same){ %>
+                            <a href="/profile/edit" class="edit-profile-btn">Edit Profile</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

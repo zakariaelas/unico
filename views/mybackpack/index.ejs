@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel= "stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/myBackpack.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    </head>
+    <body>
+        <header>
+            <% include ../nav.ejs %>
+        </header>
+        <div class="container">
+            <h1 class="header"><i class="ion-bag icon-big"></i> My Backpack</h1>
+            <div class="links">
+                <div class="todos">
+                    <h1><a href='/mybackpack/todos'>My Todos</a></h1>
+                </div>
+                <div class="notes">
+                    <h1><a href='/mybackpack/notes'>My Notes</a></h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,228 @@
+*{
+    font-size:20px;
+    font-family: 'Lato', 'Arial',sans-serif;
+    box-sizing: border-box;
+    font-weight:400;
+    padding:0;
+    margin:0;
+    color:#555;
+    line-height: 170%;
+}
+
+body{
+    background-color:#f7f7f7;
+}
+
+.row{
+    margin:0 auto;
+    width:1140px;
+    height:80px;
+}
+
+nav{
+    background-color:#3391ff;
+    box-shadow: 2px 2px 13px;
+}
+
+.main-nav{
+    margin-top:20px;
+}
+
+.logo{
+    height:90px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom:2px solid #fff;
+}
+
+.container{
+    margin:100px auto;
+    width:1140px;
+    height:100%;
+}
+
+
+.normal-input{
+    display:block;
+    margin-bottom:3%;
+    width:100%;
+    border:1px solid #3391ff;
+    outline:none;
+    height:50px;
+    padding: 10px 15px;
+}
+
+textarea{
+	display:block;
+	margin-bottom:20px;
+	width:90%;
+	height:250px;
+	resize:none;
+	padding:5px 10px;
+	line-height:125%;
+	border:1px solid #3391FF;
+}
+
+.input-grp{
+    display: flex;
+    margin-bottom:5%;
+}
+
+.addon{
+    background-color:#eee;
+    padding:6px 12px;
+    float: left;
+    border: 1px solid #ccc;
+    border-right:0;
+}
+
+.social-input{
+    outline:none;
+    border:none;
+    padding: 6px 12px;;
+    border: 1px solid #ccc;
+    flex-grow:2;
+    transition: border 0.3s ease-in-out;
+}
+
+.social-input:focus{
+    border:1px solid #3391FF;
+}
+
+
+.profile-container{
+    display:flex;
+    height:100%;
+/*
+    border:1px solid white;
+    background-color:#f7f7F7;
+    border-radius:15px;
+    box-shadow:3px 3px 10px rgba(0, 0, 0, 0.61);
+*/
+}
+
+.image-uname img{
+    border-radius: 50%;
+    height:305px;
+    width:305px;
+    margin-bottom: 4%;
+}
+
+.image-uname h3{
+    margin-bottom: 2%;
+    
+}
+
+.image-uname span{
+    margin-bottom: 2%;  
+}
+
+.image-uname{
+    margin-right:2%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding:20px;
+}
+
+.profile-info{
+    display:flex;
+    flex-grow: 2;
+    flex-direction: column;
+}
+
+.profile-info .first-last-name,
+.profile-info .academic-background,
+.profile-info .profile-bio,
+.profile-info .contact-info{
+    padding:20px 40px;
+    text-align: justify;
+}
+
+.profile-info .profile-bio h3{
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    font-size:130%;
+    margin-bottom:2%;
+    text-transform: uppercase;
+}
+
+.profile-info .profile-bio p{
+    font-weight:300;
+     
+}
+
+.academic-background h3{
+    text-transform:uppercase;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    margin-bottom:3%;
+    font-size:130%;
+}
+
+h4{
+    font-weight:400;
+    text-transform: uppercase;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    margin-bottom:3%;
+    font-size:130%;
+}
+
+span{
+    font-weight:300;
+    text-transform: none;
+}
+
+#fors{
+    background-color:#faf671;
+    padding:5px 10px;
+    border-radius:10px;
+    margin-bottom:8%;
+}
+
+#name{
+    letter-spacing: 1px;
+    font-size: 160%;
+}
+
+hr{
+    height:1px;
+    border:none;
+    width:75%;
+    background-color:#3391ff;
+    margin:5px auto;
+}
+
+.contact-info h3{
+    text-transform:uppercase;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    margin-bottom:3%;
+    font-size:130%;
+}
+
+button{
+	background-color:white;
+	border:1px solid #3391FF;
+	text-transform:uppercase;
+    margin:20px 40px;
+	font-weight:400;
+	font-size:100%;
+	padding:10px 15px;
+	transition:background-color 0.2s ease-in-out,border 0.2s ease-in-out,color 0.2s ease-in-out;
+}
+
+
+button:hover{
+	background-color:#3391FF;
+	color:white;
+	border:1px solid #3391FF;
+}
+
+.dropbtn{
+    padding:8px 11px;
+    margin:0;
+}

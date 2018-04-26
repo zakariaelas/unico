@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size:20px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    color: #555;
+}
+
+html,body{
+    height:100%;
+    width: 100%;
+    background-color:#f7f7f7;
+    /* background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)); */
+}
+
+.row{
+    margin:0 auto;
+    width:1140px;
+    height:80px;
+}
+
+nav{
+    background-color:rgb(67, 179, 95);
+    box-shadow: 2px 2px 13px;
+}
+
+.main-nav{
+    margin-top:20px;
+}
+
+.logo{
+    height:90px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom:2px solid #fff;
+}
+
+.container{
+    margin:100px auto;
+    width:1140px;
+    height:100%;
+}
+
+
+.headers{
+    text-align: center;
+    position:relative;
+    margin-top:50px;
+}
+
+h1{
+    font-size:200%;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h1:after{
+    content: " ";
+    display: block;
+    width:100px;
+    margin: 15px auto;
+    height:2px;
+    background-color: #43b35f;   
+}
+
+h3{
+    font-size:85%;
+    font-weight:300;
+    text-transform: uppercase;
+    color: #43b35f;
+    
+}
+
+#location,#title,textarea,select,option,.submitbutton{
+    display:block;
+    margin:0 auto;
+    width:60%;
+    padding:15px 30px;
+    margin-bottom:2%;
+    border-radius:10px;
+    outline:none;
+    border:1px solid #43b35f;
+    font-weight: 400;
+    font-size:90%;
+    color:#191919;
+    box-shadow: 1px 1px 1px rgba(163, 163, 163, 0.69);
+}
+
+.submitbutton{
+    background-color: #43b35f;
+    color: white;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.submitbutton:hover{
+    background-color:#399b51;
+    border:1px solid #399b51;
+}
+
+textarea{
+    height:200px;
+    resize:none;
+    overflow-x: hidden;
+}
+
+option:nth-of-type(2n){
+    background-color: rgba(230, 230, 230, 0.83);
+}
+
+
+.dropbtn{
+    padding:8px 11px;
+    margin:0;
+}
+
+.radio{
+    margin:0 auto;
+    width:60%;
+    margin-bottom:2%;
+    font-weight: 400;
+    font-size:90%;
+    color:#191919;
+
+}
+
+.radio input[type="radio"]{
+        padding:5px 5px;
+}
+
+.radio label{
+    padding: 5px 5px;
+}
+
+
+@keyframes opacityAnimation {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container, .headers{
+    animation: 0.6s ease-in-out 0s 1 opacityAnimation;
+}
+
+
+.dropdown-content {
+    background-color: rgba(67, 179, 95,0.87);
+}
+
+.user-dropdown:hover .dropbtn {
+    color:#43b35f;
+}
+
+.dropdown-content .dropdown-link:hover {
+    color:#43b35f;
+}
