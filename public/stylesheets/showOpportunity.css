@@ -115,6 +115,7 @@ hr{
 
 .opp-text{
     text-align: justify;
+    white-space: pre-line;
     word-wrap: break-word;
     line-height:170%;
     font-size:110%;

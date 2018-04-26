@@ -111,6 +111,7 @@ hr{
 .blog-text{
     text-align: justify;
     word-wrap: break-word;
+    white-space:pre-line;
     line-height:170%;
     font-size:110%;
     padding:15px 0;
